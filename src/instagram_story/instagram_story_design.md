@@ -11,7 +11,25 @@ Design an Instagram-like Story Feed where users can:
 
 ---
 
-## 2. Requirements Clarification
+
+## 2. Clarifying Questions
+### 🧩 Feature Scope
+- Are we building just the **story viewing experience**, or also **creation**, **uploading**, or **analytics**?
+- Should the design support **image and video stories**, or only one type?
+- Is this similar to **Instagram Stories**, or closer to **WhatsApp Status** / **Snapchat Discover**?
+- Should we support **interactive elements** like polls, swipe-ups, or music?
+
+### 💾 Offline & Caching
+- Should users be able to **view stories offline**?
+- Is **disk-based caching** (e.g. Room/MediaStore) expected?
+- What should be the **cache eviction policy**?
+
+### 🚀 Prefetching & Prioritization
+- Should we prefetch stories of **all followed users**, or only a few?
+- Should stories be fetched **in order of recency, engagement**, or **network quality**?
+- Is there a **priority for certain users** (e.g., close friends)?
+
+## 3. Requirements Clarification
 
 ### Functional
 - Show stories in full screen with autoplay.
@@ -30,7 +48,7 @@ Design an Instagram-like Story Feed where users can:
 
 ---
 
-## 3. Optional Mathematical Model
+## 4. Optional Mathematical Model
 - Story size ≈ 1–3 MB.
 - Avg user watches 10 users × 4 stories = 40 stories = ~80–100MB.
 - Target memory cache: 20–30MB.
@@ -38,7 +56,7 @@ Design an Instagram-like Story Feed where users can:
 
 ---
 
-## 4. Client–Server Split
+## 5. Client–Server Split
 
 ### Server
 - APIs:
@@ -55,7 +73,7 @@ Design an Instagram-like Story Feed where users can:
 
 ---
 
-## 5. API Design
+## 6. API Design
 
 ```kotlin
 interface StoryApi {
@@ -76,7 +94,7 @@ data class Story(
 
 ---
 
-## 6. High-Level Android Architecture
+## 7. High-Level Android Architecture
 
 ```plaintext
 StoryFeedFragment
@@ -93,7 +111,7 @@ StoryFeedFragment
 
 ---
 
-## 7. Detailed Module: Prefetch + Cache
+## 8. Detailed Module: Prefetch + Cache
 
 ### 📦 Cache Strategy
 
@@ -155,7 +173,7 @@ suspend fun preloadMedia(url: String, type: StoryMediaType) {
 
 ---
 
-## 8. Tricky Case: Network + Resume State
+## 9. Tricky Case: Network + Resume State
 
 ### Problem
 - User sees 2 stories → app killed → reopens → must resume at same place.
