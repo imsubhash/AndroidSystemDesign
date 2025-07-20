@@ -158,8 +158,7 @@ override fun logEvent(...) {
 
 ## 9. Flowchart
 
-![img.png](img.png)
-
+![Screenshot 2025-07-20.png](Screenshot%202025-07-20.png)
 ```
 
 ---
