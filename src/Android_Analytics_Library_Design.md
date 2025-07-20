@@ -160,9 +160,8 @@ override fun logEvent(eventName: String, params: Map<String, Any>?) {
 ---
 
 ## 10. Flowchart – Event Logging Lifecycle
-
-```mermaid
 ![Screenshot 2025-07-20.png](Screenshot%202025-07-20.png)
+
 ```
 
 ---
