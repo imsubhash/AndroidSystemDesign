@@ -41,14 +41,8 @@ interface Cache {
 ---
 
 ## 4. Architectural Overview
+![mermaid-ai-diagram-2025-07-20-152448.png](mermaid-ai-diagram-2025-07-20-152448.png)
 
-```mermaid
-flowchart TD
-    A[App Layer] -->|get/put| B[CacheManager]
-    B --> C1[MemoryCache (LRU)]
-    B --> C2[DiskCache (Room or FileStore)]
-    B --> C3[Journal/Metadata Store]
-    B --> D[EvictionManager]
 ```
 
 ---
