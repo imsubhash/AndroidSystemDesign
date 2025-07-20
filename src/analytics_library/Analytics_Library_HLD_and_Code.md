@@ -1,4 +1,4 @@
-# 📊 Android Analytics Library – High-Level Design (HLD)
+# 📊 Android Analytics Library – HLD & LLD
 
 ---
 
