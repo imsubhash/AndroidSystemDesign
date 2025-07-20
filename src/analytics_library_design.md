@@ -158,16 +158,8 @@ override fun logEvent(...) {
 
 ## 9. Flowchart
 
-```mermaid
-flowchart TD
-    A[App Calls logEvent()] --> B[Check Consent]
-    B -->|Yes| C[Create AnalyticsEvent]
-    C --> D[Enqueue to Memory Queue]
-    D --> E[Batch Reached or Timer Triggered?]
-    E -->|Yes| F[Send Batch via NetworkManager]
-    F -->|Success| G[Clear Sent Events]
-    F -->|Fail| H[Persist Events to Room DB]
-    B -->|No| Z[Drop or Encrypt Event]
+![img.png](img.png)
+
 ```
 
 ---
