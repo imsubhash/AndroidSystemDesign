@@ -26,11 +26,7 @@ Reusable Android library to upload files (images, videos, docs) with:
 ---
 
 ## 📐 2. High-Level Architecture
-
-```
 ![file_upload_flow_chart.png](file_upload_flow_chart.png)
-
-```
 
 ---
 
