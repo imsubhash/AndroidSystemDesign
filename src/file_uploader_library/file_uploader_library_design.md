@@ -27,15 +27,9 @@ Reusable Android library to upload files (images, videos, docs) with:
 
 ## 📐 2. High-Level Architecture
 
-```mermaid
-flowchart TD
-    A[App Calls FileUploader.enqueue()] --> B[UploadManager]
-    B --> C{Is Running?}
-    C -- No --> D[Start Foreground UploadWorker]
-    D --> E[UploadTask]
-    E --> F[ProgressListener + RetryHandler]
-    F --> G[NetworkManager -> Server]
-    G --> H[Callback to App]
+```
+![file_upload_flow_chart.png](file_upload_flow_chart.png)
+
 ```
 
 ---
